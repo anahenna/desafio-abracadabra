@@ -48,13 +48,9 @@ app.get('/abracadabra/conejo/:n', (req, res) =>{
     }
 })
 
-
-
-app.get('/', (req, res) => {
-    res.send('Respondiendo a la ruta raiz');
-});
-
-
+app.use((req, res) => {
+    res.status(404).send("Esta página no existe...")
+})
 
 app.use(express.static(path.join(__dirname, 'assets')));
 
